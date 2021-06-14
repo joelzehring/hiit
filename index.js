@@ -8,7 +8,7 @@ var time;
 var restTime = 10;
 var exerciseCount = 0;
 var workout = [
-  {exercise: "jumping jacks are really hard", duration: 30},
+  {exercise: "jumping jacks", duration: 30},
   {exercise: "wall sit", duration: 30},
   {exercise: "push ups", duration: 30},
   {exercise: "crunches", duration: 30},
