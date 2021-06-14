@@ -37,11 +37,12 @@ main {
 }
 
 #current-activity {
-  font-size: 2em;
+  font-size: 3em;
+  min-height: 3em;
 }
 
 #timer {
-  font-size: 10em;
+  font-size: 14em;
 }
 
 #next-activity {
