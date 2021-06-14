@@ -1,7 +1,11 @@
+var playButton = document.querySelector(".play-pause");
 var timerEl = document.querySelector("#timer");
 var currentEl = document.querySelector("#current-activity");
 var nextEl = document.querySelector("#next-activity");
+var audio = new Audio('./assets/243020__plasterbrain__game-start.ogg');
+
 var time;
+var restTime = 10;
 var exerciseCount = 0;
 var workout = [
   {exercise: "jumping jacks", duration: 30},
@@ -19,10 +23,47 @@ var workout = [
   {exercise: "other side plank", duration: 30}
 ]
 
-var main = setInterval(function() {
-  console.log("Hello");
-  exerciseCount++;
-  if (exerciseCount >= workout.length - 1) {
-    clearInterval(main);
+function main() {
+
+  playButton.style.display = "none";
+
+  currentEl.innerHTML = workout[exerciseCount].exercise;
+  nextEl.innerHTML = "";
+  time = workout[exerciseCount].duration;
+  restFlag = false;
+
+  var doWork = setInterval(function() {
+
+  // if (time = 3) {
+  //   audio.play();
+  // }
+
+  if (time < 0) {
+
+    if (!restFlag) {
+      time = restTime;
+      timerEl.innerHTML = "-";
+      restFlag = true;
+      currentEl.innerHTML = "rest";
+      nextEl.innerHTML = "next: " + workout[exerciseCount + 1].exercise;
+    } else if (restFlag) {
+      restFlag = false;
+      exerciseCount++;
+      currentEl.innerHTML = workout[exerciseCount].exercise;
+      nextEl.innerHTML = "";
+      time = workout[exerciseCount].duration;
+    }
   }
-}, 1000);
+
+  if (exerciseCount >= workout.length - 1) {
+    clearInterval(doWork);
+    currentEl.innerHTML = "end";
+    timerEl.innerHTML = "-";
+    nextEl.innerHTML = "";
+  }
+
+  timerEl.innerHTML = time;
+
+  time--;
+
+}, 1000)};
