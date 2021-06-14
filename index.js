@@ -23,15 +23,15 @@ var workout = [
   {exercise: "other side plank", duration: 30}
 ]
 
-function main() {
+async function main() {
 
-  let wakeLock = null;
+  let lock
 
-  // create an async function to request a wake lock
   try {
-    wakeLock = navigator.wakeLock.request('screen');
+    lock = await navigator.wakeLock.request('screen');
   } catch (err) {
-    // The Wake Lock request has failed - usually system related, such as battery.
+    // Error or rejection
+    console.log('Wake Lock error: ', err);
   }
 
   playButton.style.display = "none";
@@ -70,9 +70,9 @@ function main() {
     timerEl.innerHTML = "-";
     nextEl.innerHTML = "";
 
-    wakeLock.release()
+    lock.release()
     .then(() => {
-      wakeLock = null;
+      lock = null;
     });
   }
 
