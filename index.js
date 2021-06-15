@@ -64,7 +64,7 @@ async function main() {
     }
   }
 
-  if (exerciseCount >= workout.length) {
+  if (exerciseCount > workout.length) {
     clearInterval(doWork);
     currentEl.innerHTML = "end";
     timerEl.innerHTML = "-";
