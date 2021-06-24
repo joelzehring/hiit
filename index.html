@@ -1,22 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./assets/styles.css">
   <title>HIIT</title>
 </head>
-<body>
+
+<body class="black">
   <header>
-    <h1 class="title">HIIT</h1>
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper grey darken-3">
+          <a href="#!" class="brand-logo">HIIT</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">Exercises</a></li>
+          </ul>
+        </div>
+      </nav>
+  
+      <ul class="sidenav" id="mobile-demo">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html">Exercises</a></li>
+      </ul>
+    </div>
   </header>
-  <main>
-    <button class="play-pause" onclick="main()">Play</button>
-    <h2 class="center" id="current-activity"></h2>
-    <h1 class="center" id="timer"></h1>
-    <h2 class="center" id="next-activity"></h2>
+  <main class="container">
+    <button class="play-pause waves-effect waves-light btn-small purple" onclick="main()">Play</button>
+    <h2 class="center white-text" id="current-activity"></h2>
+    <h1 class="center white-text" id="timer"></h1>
+    <h2 class="center white-text" id="next-activity"></h2>
   </main>
-<script type="text/javascript" src="./index.js"></script>
+  <script type="text/javascript" src="./js/materialize.min.js"></script>
+  <script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>
