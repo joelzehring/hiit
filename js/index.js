@@ -2,8 +2,7 @@ var playButton = document.querySelector(".play-pause");
 var timerEl = document.querySelector("#timer");
 var currentEl = document.querySelector("#current-activity");
 var nextEl = document.querySelector("#next-activity");
-var audio = new Audio('../assets/243020__plasterbrain__game-start.ogg');
-
+var audio = new Audio('./assets/243020__plasterbrain__game-start.ogg');
 let playSound;
 var time;
 var restTime = 10;
