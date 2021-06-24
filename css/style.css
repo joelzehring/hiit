@@ -1,50 +1,7 @@
-* {
-  margin: 0;
-  padding: 0;
-  background-color: black;
-  color: white;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-header {
-  display: flex;
-  min-height: 3em;
-}
-
-header h1 {
-  align-self: stretch;
-}
-
-button {
-  margin: 0 auto;
-  max-width: 10em;
-  border: none;
-  background-color: dimgrey;
-  padding: 1em 2em;
-}
-
-button:active {
-  background-color: purple;
-}
-
-main {
-  margin: 0 auto;
-  max-width: 768px;
-}
-
-.center {
-  text-align: center;
-}
-
 #current-activity {
-  font-size: 3em;
-  min-height: 3em;
+  height: 3em;
 }
 
 #timer {
-  font-size: 14em;
-}
-
-#next-activity {
-  font-size: 2em;
+  font-size: 16em;
 }
