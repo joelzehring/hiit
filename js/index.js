@@ -47,12 +47,11 @@ async function main() {
   if (time > -1) {
 
     timerEl.innerHTML = time;
-
     time--;
 
   } else {
 
-    if (exerciseCount == workout.length) {
+    if (exerciseCount === workout.length - 1) {
       clearInterval(doWork);
       currentEl.innerHTML = "end";
       timerEl.innerHTML = "-";
@@ -78,7 +77,7 @@ async function main() {
     }      
   }
   
-    if (time == -1) {
+    if (time === -1) {
       playSound = audio.play();
     }
 
